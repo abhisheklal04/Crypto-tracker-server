@@ -2,23 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import axios from 'axios';
 import 'dotenv/config';
-
-const app = express();
-const port = process.env.PORT || 3001;
-
-// Popular cryptocurrency symbols
-const POPULAR_CRYPTOCURRENCIES = [
-  'BTCUSDT',  // Bitcoin
-  'ETHUSDT',  // Ethereum
-  'BNBUSDT',  // Binance Coin
-  'ADAUSDT',  // Cardano
-  'DOGEUSDT', // Dogecoin
-  'XRPUSDT',  // Ripple
-  'SOLUSDT',  // Solana
-  'DOTUSDT',  // Polkadot
-  'MATICUSDT', // Polygon
-  'AVAXUSDT'  // Avalanche
-];
+import { CRYPTO_DETAILS, POPULAR_CRYPTOCURRENCIES } from './constants/cryptocurrencies.js';
 
 app.use(cors());
 app.use(express.json());
@@ -124,6 +108,28 @@ app.get('/api/stats/:symbol', rateLimiter, async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({ error: `Failed to fetch statistics for ${symbol}` });
+  }
+});
+
+// Endpoint to get cryptocurrency details
+app.get('/api/crypto-details', rateLimiter, (req, res) => {
+  try {
+    const cryptoList = Object.entries(CRYPTO_DETAILS).map(([key, value]) => ({
+      tradingPair: key,
+      name: value.name,
+      symbol: value.symbol,
+      order: value.order
+    }));
+
+    // Sort by the predefined order
+    cryptoList.sort((a, b) => a.order - b.order);
+
+    res.json({
+      cryptocurrencies: cryptoList,
+      timestamp: Date.now()
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch cryptocurrency details' });
   }
 });
 
