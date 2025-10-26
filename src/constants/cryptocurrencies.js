@@ -15,41 +15,41 @@ export const CRYPTO_DETAILS = {
     symbol: 'DOGE',
     order: 3
   },
-  'BNBUSDT': {
-    name: 'Binance Coin',
-    symbol: 'BNB',
-    order: 4
-  },
-  'ADAUSDT': {
-    name: 'Cardano',
-    symbol: 'ADA',
-    order: 5
-  },
-  'XRPUSDT': {
-    name: 'Ripple',
-    symbol: 'XRP',
-    order: 6
-  },
-  'SOLUSDT': {
-    name: 'Solana',
-    symbol: 'SOL',
-    order: 7
-  },
-  'DOTUSDT': {
-    name: 'Polkadot',
-    symbol: 'DOT',
-    order: 8
-  },
-  'MATICUSDT': {
-    name: 'Polygon',
-    symbol: 'MATIC',
-    order: 9
-  },
-  'AVAXUSDT': {
-    name: 'Avalanche',
-    symbol: 'AVAX',
-    order: 10
-  }
+  // 'BNBUSDT': {
+  //   name: 'Binance Coin',
+  //   symbol: 'BNB',
+  //   order: 4
+  // },
+  // 'ADAUSDT': {
+  //   name: 'Cardano',
+  //   symbol: 'ADA',
+  //   order: 5
+  // },
+  // 'XRPUSDT': {
+  //   name: 'Ripple',
+  //   symbol: 'XRP',
+  //   order: 6
+  // },
+  // 'SOLUSDT': {
+  //   name: 'Solana',
+  //   symbol: 'SOL',
+  //   order: 7
+  // },
+  // 'DOTUSDT': {
+  //   name: 'Polkadot',
+  //   symbol: 'DOT',
+  //   order: 8
+  // },
+  // 'MATICUSDT': {
+  //   name: 'Polygon',
+  //   symbol: 'MATIC',
+  //   order: 9
+  // },
+  // 'AVAXUSDT': {
+  //   name: 'Avalanche',
+  //   symbol: 'AVAX',
+  //   order: 10
+  // }
 };
 
 // List of active cryptocurrency trading pairs
